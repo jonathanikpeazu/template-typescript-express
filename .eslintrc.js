@@ -1,3 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-johno']
+  extends: [
+    'eslint-config-johno'
+  ]
 }
