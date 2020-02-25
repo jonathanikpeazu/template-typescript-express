@@ -5,6 +5,9 @@
   "repository": "https://github.com/jonathanikpeazu/earnings-watcher-backend.git",
   "author": "Jonathan Ikpeazu <jonathan.ikpeazu@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
