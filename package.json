@@ -10,7 +10,7 @@
     "lint": "eslint --ext json,ts,tsx ./src/ --fix",
     "tsc": "tsc",
     "build": "npm-run-all clean lint tsc",
-    "start:dev": "npx babel-node --extensions=\".ts,.js\" src/index.ts"
+    "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
