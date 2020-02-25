@@ -10,6 +10,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(config.port, () => {
-  // tslint:disable-next-line:no-console
   $log.info(`server started at http://localhost:${config.port}`)
 })
