@@ -1,4 +1,4 @@
-# EarningsWatcher
+# TypeScript / Express Starter Project
 
 - Init package.json
 - Install express
