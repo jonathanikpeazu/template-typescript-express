@@ -10,8 +10,8 @@
     "lint": "npx eslint --ext js,json,ts,tsx ./src/ --fix",
     "tsc": "tsc",
     "build": "npm-run-all clean lint tsc",
-    "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts",
-    "start": "node dist"
+    "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts | npx bunyan",
+    "start": "node dist | npx bunyan"
   },
   "husky": {
     "hooks": {

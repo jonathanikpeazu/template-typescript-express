@@ -8,3 +8,5 @@
 - Install and configure ESLint and Prettier
 - Set up package.json scripts for building and running
 - Install Husky and lint-staged for pre-commit hook.
+- Set up env-dependent config repo.
+- Install Bunyan logging
