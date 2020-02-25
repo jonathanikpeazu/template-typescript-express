@@ -15,12 +15,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{json,ts,tsx,js,css,md}": [
+    "*.{ts,tsx,js,css,md}": [
       "npx eslint --fix",
+      "git add"
+    ],
+    ".json": [
+      "npx prettier --write",
       "git add"
     ]
   },
