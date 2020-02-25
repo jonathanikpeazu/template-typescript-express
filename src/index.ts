@@ -10,6 +10,8 @@ const port = process.env.SERVER_PORT;
 
 const app = express();
 
+const app = ''
+
 app.get('/', (req, res) => {
     res.json({ message: 'Hello, World!' });
 });
