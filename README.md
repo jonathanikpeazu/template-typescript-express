@@ -7,3 +7,4 @@
 - Install babel-node stuff
 - Install and configure ESLint and Prettier
 - Set up package.json scripts for building and running
+- Install Husky
