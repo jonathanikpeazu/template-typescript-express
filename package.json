@@ -6,7 +6,7 @@
   "author": "Jonathan Ikpeazu <jonathan.ikpeazu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "tsc --noEmit && eslint 'src/.{js,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
