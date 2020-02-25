@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-import express from "express";
+import dotenv from 'dotenv';
+import express from 'express';
 
 // initialize configuration
 dotenv.config();
@@ -10,12 +10,12 @@ const port = process.env.SERVER_PORT;
 
 const app = express();
 
-app.get( "/", ( req, res ) => {
-  res.json({ message: 'Hello, World!' });
-} );
+app.get('/', (req, res) => {
+    res.json({ message: 'Hello, World!' });
+});
 
 // start the express server
-app.listen( port, () => {
-  // tslint:disable-next-line:no-console
-  console.log( `server started at http://localhost:${ port }` );
-} );
+app.listen(port, () => {
+    // tslint:disable-next-line:no-console
+    console.log(`server started at http://localhost:${port}`);
+});
