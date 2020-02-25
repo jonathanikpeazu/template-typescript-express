@@ -9,13 +9,18 @@
     "clean": "rimraf dist/*",
     "lint": "eslint --ext json,ts,tsx ./src/ --fix",
     "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc"
+    "build": "npm-run-all clean lint tsc",
+    "start:dev": "npx babel-node --extensions=\".ts,.js\" src/index.ts"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@types/express": "^4.17.2",
     "@types/node": "^13.7.4",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
