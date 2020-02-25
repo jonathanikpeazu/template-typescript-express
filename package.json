@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist/*",
-    "lint": "eslint --ext json,ts,tsx ./src/ --fix",
+    "lint": "npx eslint --ext json,ts,tsx ./src/ --fix",
     "tsc": "tsc",
     "build": "npm-run-all clean lint tsc",
     "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts",
@@ -17,6 +17,12 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
+  },
+  "lint-staged": {
+    "*.{json,ts,tsx,js,css,md}": [
+      "npx eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -38,6 +44,7 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.4.0",
     "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
