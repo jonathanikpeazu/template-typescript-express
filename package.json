@@ -23,6 +23,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "eslint-config-johno": "https://github.com/jonathanikpeazu/eslint-config-johno.git",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/node": "^7.8.4",
