@@ -4,13 +4,14 @@ FROM node:12.16.1
 WORKDIR /usr/src/app
 
 # Install yarn
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.0
 
 # Install app dependencies
-COPY package.json ./
-COPY ./yarn.lock ./
-RUN mkdir -p .yarn/cache
-COPY .yarn/cache ./yarn.cache
+COPY .yarn ./.yarn
+COPY .yarnrc.yml .
+COPY ./yarn.lock .
+COPY package.json .
+
 RUN yarn install
 
 # Bundle app source
