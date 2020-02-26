@@ -9,6 +9,8 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
 # Install app dependencies
 COPY package.json ./
 COPY ./yarn.lock ./
+RUN mkdir -p .yarn/cache
+COPY .yarn/cache ./yarn.cache
 RUN yarn install
 
 # Bundle app source
