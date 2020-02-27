@@ -1,11 +1,32 @@
 version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:12.16.1
-    working_directory: ~/workspace
 
-    steps:
-      - checkout
-      - node-cache-v1-{{ checksum "yarn.lock" }}
-      -
+executors:
+  standard-executor:
+    docker: # run the steps with Docker
+      - image: circleci/node:12.16.1 # ...with this image as the primary container; this is where all `steps` will run
+      # - image: mongo:4.2.0 # and this image as the secondary service container
+
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    executor: standard-executor
+
+    working_directory: ~/workspace # directory where steps will run
+
+    steps: # a collection of executable commands
+      - checkout # special step to check out source code to working directory
+      - restore_cache: # special step to restore the dependency cache
+        # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          -   dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Yarn install
+          command: yarn install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+            - ./.yarn/cache
+      - run:
+          name: Compile
+          command: yarn build
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: test-results.xml
