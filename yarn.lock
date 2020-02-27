@@ -3123,7 +3123,7 @@ __metadata:
 
 "eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git":
   version: 1.0.0
-  resolution: "eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:5f5b72cceb369969c30fe84b604514cab8940154"
+  resolution: "eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:1d2bb4442fe8d614efead6385a762fe712a341da"
   dependencies:
     "@typescript-eslint/parser": ^2.21.0
     eslint: ^6.8.0
@@ -3132,12 +3132,14 @@ __metadata:
     eslint-plugin-import: ^2.20.1
     eslint-plugin-jsx-a11y: ^6.2.3
     eslint-plugin-react: ^7.18.3
-    eslint-plugin-react-hooks: ^2.4.0
+    eslint-plugin-react-hooks: ^1.7.0
+    typescript: ^3.8.2
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^2.21.0
     eslint: ">=3.0.0"
     eslint-plugin-prettier: ^3.1.2
-  checksum: 2/de79517e66787074ee883a51984b74483fc52539aee57b852b89c93296cfff519c958161149b40eb13acb5ce0421a0844a9131f33cb67f81632ab6f7eea6c403
+    typescript: ">=2.8.0"
+  checksum: 2/e059f166a21845316da2cf63399c746287c5b1fce6a47c5e8370679e35db30eabffce0ddbe4eb7d213478d4ae9dc150228bf8076179289bc9775b2bf53e990c7
   languageName: node
   linkType: hard
 
@@ -3233,15 +3235,6 @@ __metadata:
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
   checksum: 2/99dc3276cd8f20428e0ec4d9b15433ce22b87ef9f1c82279369a98b7c663f9092ff63f63683a948f207ab75cceedd808cac2ca870011b733a89b0fc753eb0f91
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-react-hooks@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "eslint-plugin-react-hooks@npm:2.4.0"
-  peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-  checksum: 2/3230a778c34daf905b7ea955ae2bbb009d66f22c85e26c85dd73279702d3e369d3d1728daadcf02d4f09687ffb23ce9db2a277d3386e136e83a946538002e1c1
   languageName: node
   linkType: hard
 
