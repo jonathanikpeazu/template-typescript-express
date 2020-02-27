@@ -12,6 +12,7 @@ COPY .yarnrc.yml .
 COPY ./yarn.lock .
 COPY package.json .
 
+RUN yarn set version berry
 RUN yarn install
 
 # Bundle app source

@@ -8,8 +8,8 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "lint": "npx eslint --ext js,json,ts,tsx ./src/ --fix",
-    "tsc": "tsc",
-    "build": "npm-run-all clean lint tsc",
+    "compile": "tsc",
+    "build": "npm-run-all clean lint compile",
     "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts | npx bunyan",
     "start": "node dist | npx bunyan",
     "test:integration": "npx jest \"integration.test\"",
