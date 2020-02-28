@@ -1,3 +1,5 @@
+import { GraphQL } from '../graphql'
+
 type Book = { title: string; author: string }
 const books: Book[] = [
   {
@@ -10,7 +12,7 @@ const books: Book[] = [
   },
 ]
 
-export const resolvers = {
+export const resolvers: GraphQL.Resolvers = {
   Query: {
     books: (): Book[] => books,
   },
