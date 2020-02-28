@@ -17,7 +17,8 @@
     "test:unit": "npx jest \"unit.test\"",
     "migrate:up": "./tools/sql_setup/migrate-up.sh",
     "migrate:down": "./tools/sql_setup/migrate-down.sh",
-    "migrate:make": "./tools/sql_setup/migrate-make.sh"
+    "migrate:make": "./tools/sql_setup/migrate-make.sh",
+    "migrate:seed": "./tools/sql_setup/migrate-seed.sh"
   },
   "husky": {
     "hooks": {
