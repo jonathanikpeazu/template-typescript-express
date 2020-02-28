@@ -1,1 +1,5 @@
-module.exports = {}
+module.exports = {
+  POSTGRES_HOST: 'localhost',
+  POSTGRES_USER: 'user',
+  POSTGRES_PASSWORD: 'password',
+}

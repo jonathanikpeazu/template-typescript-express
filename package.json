@@ -1,20 +1,23 @@
 {
-  "name": "earnings-watcher-backend",
+  "name": "template-typescript-express",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/jonathanikpeazu/template-typescript-express.git",
   "author": "Jonathan Ikpeazu <jonathan.ikpeazu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "codegen": "npx graphql-codegen",
-    "clean": "rimraf dist/*",
-    "lint": "npx eslint --ext js,json,ts,tsx ./src/ --fix",
-    "compile": "tsc",
     "build": "npm-run-all clean lint compile",
-    "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts | npx bunyan",
+    "clean": "rimraf dist/*",
+    "codegen": "npx graphql-codegen",
+    "compile": "tsc",
+    "lint": "npx eslint --ext js,json,ts,tsx ./src/ --fix",
     "start": "node dist | npx bunyan",
+    "start:dev": "npx babel-node --extensions=\".ts,.js\" --inspect=9229 src/index.ts | npx bunyan",
     "test:integration": "npx jest \"integration.test\"",
-    "test:unit": "npx jest \"unit.test\""
+    "test:unit": "npx jest \"unit.test\"",
+    "migrate:up": "./tools/sql_setup/migrate-up.sh",
+    "migrate:down": "./tools/sql_setup/migrate-down.sh",
+    "migrate:make": "./tools/sql_setup/migrate-make.sh"
   },
   "husky": {
     "hooks": {
@@ -43,7 +46,8 @@
     "graphql-tools": "^4.0.7",
     "knex": "^0.20.10",
     "lodash": "^4.17.15",
-    "objection": "^2.1.3"
+    "objection": "^2.1.3",
+    "pg": "^7.18.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
