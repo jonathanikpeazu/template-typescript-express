@@ -2,10 +2,12 @@ overwrite: true
 schema: http://localhost:3000/graphql
 generates:
   ./src/api/graphql.tsx:
+    config:
+      contextType: './types.d#AppContext'
     plugins:
-#      - add:
-#          content:
-#            - '// eslint-disable @typescript-eslint/no-namespace'
+      - add:
+          content:
+            - "/* eslint-disable @typescript-eslint/no-explicit-any */\n"
       - add:
           content:
             - ''

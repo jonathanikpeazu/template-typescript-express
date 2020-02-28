@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { GraphQLResolveInfo } from 'graphql'
+import { AppContext } from './types.d'
 
 export namespace GraphQL { /* eslint-disable-line */
   export type Maybe<T> = T | null
@@ -108,7 +111,7 @@ export namespace GraphQL { /* eslint-disable-line */
   }
 
   export type BookResolvers<
-    ContextType = any,
+    ContextType = AppContext,
     ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']
   > = {
     title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -117,13 +120,13 @@ export namespace GraphQL { /* eslint-disable-line */
   }
 
   export type QueryResolvers<
-    ContextType = any,
+    ContextType = AppContext,
     ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
   > = {
     books?: Resolver<Maybe<Array<Maybe<ResolversTypes['Book']>>>, ParentType, ContextType>
   }
 
-  export type Resolvers<ContextType = any> = {
+  export type Resolvers<ContextType = AppContext> = {
     Book?: BookResolvers<ContextType>
     Query?: QueryResolvers<ContextType>
   }
@@ -132,5 +135,5 @@ export namespace GraphQL { /* eslint-disable-line */
    * @deprecated
    * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
    */
-  export type IResolvers<ContextType = any> = Resolvers<ContextType>
+  export type IResolvers<ContextType = AppContext> = Resolvers<ContextType>
 }
