@@ -4,7 +4,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: './tools/sql_setup/migrations/*',
+      files: './migrations/*',
       rules: {
         '@typescript-eslint/no-explicit-any': 0
       }

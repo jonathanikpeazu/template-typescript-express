@@ -1,3 +1,5 @@
+import { knexSnakeCaseMappers } from 'objection'
+
 const { config } = require('./src/config')
 
 const knexConfig = {
@@ -14,6 +16,7 @@ const knexConfig = {
     min: config.POSTGRES_MIN_POOL_SIZE,
     max: config.POSTGRES_MAX_POOL_SIZE,
   },
+  ...knexSnakeCaseMappers(),
 }
 
 module.exports = {
