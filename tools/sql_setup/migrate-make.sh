@@ -1,5 +1,5 @@
 MIGRATION_FILENAME=$1
-THIS_ENV=2
+THIS_ENV=$2
 THIS_ENV=${THIS_ENV:-development}
 
 NODE_ENV=$THIS_ENV npx babel-node --extensions ".js,.ts" \
