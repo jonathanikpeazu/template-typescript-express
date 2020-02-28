@@ -7,7 +7,7 @@ import { knex } from '../lib/knex'
 
 Model.knex(knex)
 
-export default class BaseModel extends DBErrors(Model) {
+export class BaseModel extends DBErrors(Model) {
   public static get modelPaths(): string[] {
     return [__dirname]
   }

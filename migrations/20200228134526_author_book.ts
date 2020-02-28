@@ -4,11 +4,15 @@ export async function up(knex: Knex): Promise<any> {
   await knex.schema.createTable('author', table => {
     table.uuid('id').primary()
     table.text('name')
+    table.timestamp('createdAt')
+    table.timestamp('updatedAt')
   })
   await knex.schema.createTable('book', table => {
     table.uuid('id').primary()
     table.uuid('authorId').references('author.id')
     table.text('name')
+    table.timestamp('createdAt')
+    table.timestamp('updatedAt')
   })
 }
 

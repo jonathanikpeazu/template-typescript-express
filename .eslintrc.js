@@ -2,6 +2,9 @@ module.exports = {
   extends: [
     'eslint-config-johno'
   ],
+  globals: {
+    jasmine: 'readonly'
+  },
   overrides: [
     {
       files: './migrations/*',
