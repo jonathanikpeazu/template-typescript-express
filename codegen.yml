@@ -1,0 +1,21 @@
+overwrite: true
+schema: http://localhost:3000/graphql
+generates:
+  ./src/api/graphql.tsx:
+    plugins:
+      - add:
+          content:
+            - '// eslint-disable @typescript-eslint/no-namespace'
+      - add:
+          content:
+            - ''
+            - 'export namespace GraphQL {'
+      - add:
+          placement: 'append'
+          content: '}'
+      - 'typescript'
+      - 'typescript-resolvers'
+      - 'typescript-operations'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'

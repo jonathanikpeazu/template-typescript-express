@@ -8,7 +8,7 @@ setupApolloServer(app, config.GRAPHQL_PATH)
 
 app.get('/', (req, res) => res.json({ message: 'Hello, World!' }))
 
-app.listen(config.port, () => {
-  const url = `http:localhost:${config.PORT}`
+app.listen(config.PORT, () => {
+  const url = `http://localhost:${config.PORT}`
   $log.info(`🚀  Server ready at ${url}`)
 })
