@@ -12,8 +12,10 @@ const books: Book[] = [
   },
 ]
 
+const queryResolvers: GraphQL.QueryResolvers = {
+  books: (): Book[] => books,
+}
+
 export const resolvers: GraphQL.Resolvers = {
-  Query: {
-    books: (): Book[] => books,
-  },
+  Query: queryResolvers,
 }
