@@ -1,5 +1,9 @@
 module.exports = {
-  POSTGRES_HOST: 'localhost',
-  POSTGRES_USER: 'user',
-  POSTGRES_PASSWORD: 'password',
+  KNEX_CONFIG: {
+    connection: {
+      host: 'localhost',
+      user: 'user',
+      password: 'password',
+    },
+  },
 }
