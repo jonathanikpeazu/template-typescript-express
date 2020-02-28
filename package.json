@@ -2,7 +2,7 @@
   "name": "earnings-watcher-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/jonathanikpeazu/earnings-watcher-backend.git",
+  "repository": "https://github.com/jonathanikpeazu/template-typescript-express.git",
   "author": "Jonathan Ikpeazu <jonathan.ikpeazu@gmail.com>",
   "license": "MIT",
   "scripts": {
