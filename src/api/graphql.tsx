@@ -23,7 +23,7 @@ export namespace GraphQL { /* eslint-disable-line */
 
   export type Query = {
     __typename?: 'Query'
-    books?: Maybe<Array<Maybe<Book>>>
+    books: Array<Book>
   }
 
   export type ResolverTypeWrapper<T> = Promise<T> | T
@@ -123,7 +123,7 @@ export namespace GraphQL { /* eslint-disable-line */
     ContextType = AppContext,
     ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
   > = {
-    books?: Resolver<Maybe<Array<Maybe<ResolversTypes['Book']>>>, ParentType, ContextType>
+    books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>
   }
 
   export type Resolvers<ContextType = AppContext> = {
