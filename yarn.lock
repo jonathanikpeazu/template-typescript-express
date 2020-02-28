@@ -4959,9 +4959,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:4b1734da228b4bb99ed42cafcf2787c6a8ed7131":
+"eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:37c2f00532b0715d56da4ed66ce08373b937c6cb":
   version: 1.0.0
-  resolution: "eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:4b1734da228b4bb99ed42cafcf2787c6a8ed7131"
+  resolution: "eslint-config-johno@https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:37c2f00532b0715d56da4ed66ce08373b937c6cb"
   dependencies:
     "@typescript-eslint/parser": ^2.21.0
     eslint: ^6.8.0
@@ -4977,7 +4977,7 @@ __metadata:
     eslint: ">=3.0.0"
     eslint-plugin-prettier: ^3.1.2
     typescript: ">=2.8.0"
-  checksum: 2/f2c53e13ad1aa7df7f4a4f11b082ce5a7c73699046d31976bf96a25c5dec34260e8be9dd0eb2b0ffa8ce9ae514010a6c74ad661a1cb5b30af51704dff5a8b0fa
+  checksum: 2/90133b02a756543d444ba4c3dac5611df61ca94abb3150da1173bd49f0f23e4834fecd6448eede8d1703e5f4c21bd04ff762303d3982048bb2630d0ceaca9c66
   languageName: node
   linkType: hard
 
@@ -11110,7 +11110,7 @@ __metadata:
     bunyan: ^1.8.12
     dotenv: ^8.2.0
     eslint: ^6.8.0
-    eslint-config-johno: "https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:4b1734da228b4bb99ed42cafcf2787c6a8ed7131"
+    eslint-config-johno: "https://github.com/jonathanikpeazu/eslint-config-johno.git#commit:37c2f00532b0715d56da4ed66ce08373b937c6cb"
     eslint-plugin-import: ^2.20.1
     eslint-plugin-jsx-a11y: ^6.2.3
     eslint-plugin-prettier: ^3.1.2
