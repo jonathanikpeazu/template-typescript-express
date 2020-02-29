@@ -1,21 +1,22 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 
-import { Model } from 'objection'
+import { JSONSchema, Model } from 'objection'
 
 export default function TimestampedMixin(
   ModelClass: typeof Model,
   fieldOptions: { createdAt: boolean; updatedAt: boolean } = { createdAt: true, updatedAt: true },
 ): typeof Model {
   return class extends ModelClass {
-    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-    public $beforeInsert(...args): Promise<any> | void {
+    public $beforeValidate(jsonSchema, json, opt): JSONSchema {
       if (fieldOptions.createdAt) {
+        const createdAt = new Date()
         // @ts-ignore
-        this.createdAt = new Date()
+        this.createdAt = createdAt
+        // eslint-disable-next-line no-param-reassign
+        json.createdAt = createdAt
       }
 
-      // @ts-ignore
-      return super.$beforeInsert(...args)
+      return super.$beforeValidate(jsonSchema, json, opt)
     }
 
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
