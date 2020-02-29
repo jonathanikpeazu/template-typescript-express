@@ -1,23 +1,34 @@
+import { GraphQLDateTime } from 'graphql-iso-date'
 import { GraphQL } from '../graphql'
-
-type Book = { title: string; author: string }
-const books: Book[] = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-]
+import { Author, Book } from '../../models'
 
 const queryResolvers: GraphQL.QueryResolvers = {
-  books: (): Book[] => books,
+  books: async () => Book.query(),
+  authors: async () => Author.query(),
 }
 
-export const resolvers: GraphQL.Resolvers[] = [
+const bookResolvers: GraphQL.BookResolvers = {
+  author: async ({ id }) =>
+    Author.query()
+      .whereExists(Author.relatedQuery('books').findById(id))
+      .first(),
+}
+
+const authorResolvers: GraphQL.AuthorResolvers = {
+  books: async ({ id }) => Book.query().whereExists(Book.relatedQuery('author').findById(id)),
+}
+
+export const resolvers = [
   {
     Query: queryResolvers,
+  },
+  {
+    Book: bookResolvers,
+  },
+  {
+    Author: authorResolvers,
+  },
+  {
+    ISODateTime: GraphQLDateTime,
   },
 ]
