@@ -9,7 +9,7 @@ export class Book extends TimestampedMixin(BaseModel) {
 
   public authorId: string
 
-  public name: string
+  public title: string
 
   public createdAt: Date
 

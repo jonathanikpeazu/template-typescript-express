@@ -15,7 +15,7 @@ export class Author extends TimestampedMixin(BaseModel) {
 
   public updatedAt: Date
 
-  public Books: Book[]
+  public books: Book[]
 
   public static get tableName(): string {
     return TABLE_NAMES.author

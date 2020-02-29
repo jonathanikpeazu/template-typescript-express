@@ -2,12 +2,11 @@
 
 import * as uuid from 'uuid'
 import { Model } from 'objection'
-import { DBErrors } from 'objection-db-errors'
 import { knex } from '../lib/knex'
 
 Model.knex(knex)
 
-export class BaseModel extends DBErrors(Model) {
+export class BaseModel extends Model {
   public static get modelPaths(): string[] {
     return [__dirname]
   }
