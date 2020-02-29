@@ -8089,7 +8089,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.15, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
+"lodash@npm:4.17.15, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: 2/aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
@@ -8943,6 +8943,18 @@ __metadata:
     function-bind: ^1.1.1
     has: ^1.0.3
   checksum: 2/33e99ceb5cdb4c4b43372aa133ecb1d73d5cf73ebbbe9ec64f45cd39c87d0226ca88d6a354cd8b819fbde6b9ebbc7df1a6a093f91d2c951c51a07546f54fe33d
+  languageName: node
+  linkType: hard
+
+"objection-graphql@npm:^0.4.5":
+  version: 0.4.5
+  resolution: "objection-graphql@npm:0.4.5"
+  dependencies:
+    lodash: ^4.17.11
+  peerDependencies:
+    graphql: "> 0.9.0"
+    objection: "> 0.8.0"
+  checksum: 2/d4af39bc50f6be8a1974db3fc4763bc193ce5e4f52944bcea6deb3f766b222b0c88a1c1a5a8246df29790fdcecc6c5300e53e6ecdee8549adb43a47ccca28800
   languageName: node
   linkType: hard
 
@@ -11144,6 +11156,7 @@ __metadata:
     lodash: ^4.17.15
     npm-run-all: ^4.1.5
     objection: ^2.1.3
+    objection-graphql: ^0.4.5
     pg: ^7.18.2
     prettier: ^1.19.1
     rimraf: ^3.0.2
