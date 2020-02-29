@@ -10,3 +10,6 @@
 - Install Husky and lint-staged for pre-commit hook.
 - Set up env-dependent config repo.
 - Install Bunyan logging
+- Install Knex and set up initial sample migrations: Book and Author
+- Install Objection and set up initial models
+- Install GraphQL and Apollo Server and set up initial resolvers

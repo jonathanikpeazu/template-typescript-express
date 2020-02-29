@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { GraphQLResolveInfo } from 'graphql'
+import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql'
 import { AppContext } from './types.d'
 
 export namespace GraphQL { /* eslint-disable-line */
@@ -13,17 +13,32 @@ export namespace GraphQL { /* eslint-disable-line */
     Boolean: boolean
     Int: number
     Float: number
+    DateTime: any
+  }
+
+  export type Author = {
+    __typename?: 'Author'
+    id: Scalars['ID']
+    name?: Maybe<Scalars['String']>
+    books?: Maybe<Array<Book>>
+    createdAt: Scalars['DateTime']
+    updatedAt?: Maybe<Scalars['DateTime']>
   }
 
   export type Book = {
     __typename?: 'Book'
+    id: Scalars['ID']
+    authorId?: Maybe<Scalars['ID']>
     title?: Maybe<Scalars['String']>
-    author?: Maybe<Scalars['String']>
+    author?: Maybe<Author>
+    createdAt: Scalars['DateTime']
+    updatedAt?: Maybe<Scalars['DateTime']>
   }
 
   export type Query = {
     __typename?: 'Query'
     books: Array<Book>
+    authors: Array<Author>
   }
 
   export type ResolverTypeWrapper<T> = Promise<T> | T
@@ -98,7 +113,10 @@ export namespace GraphQL { /* eslint-disable-line */
   export type ResolversTypes = {
     Query: ResolverTypeWrapper<{}>
     Book: ResolverTypeWrapper<Book>
+    ID: ResolverTypeWrapper<Scalars['ID']>
     String: ResolverTypeWrapper<Scalars['String']>
+    Author: ResolverTypeWrapper<Author>
+    DateTime: ResolverTypeWrapper<Scalars['DateTime']>
     Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   }
 
@@ -106,17 +124,40 @@ export namespace GraphQL { /* eslint-disable-line */
   export type ResolversParentTypes = {
     Query: {}
     Book: Book
+    ID: Scalars['ID']
     String: Scalars['String']
+    Author: Author
+    DateTime: Scalars['DateTime']
     Boolean: Scalars['Boolean']
+  }
+
+  export type AuthorResolvers<
+    ContextType = AppContext,
+    ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']
+  > = {
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>
+    name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+    books?: Resolver<Maybe<Array<ResolversTypes['Book']>>, ParentType, ContextType>
+    createdAt?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>
+    updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>
+    __isTypeOf?: isTypeOfResolverFn<ParentType>
   }
 
   export type BookResolvers<
     ContextType = AppContext,
     ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']
   > = {
+    id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>
+    authorId?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>
     title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-    author?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+    author?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType>
+    createdAt?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>
+    updatedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>
     __isTypeOf?: isTypeOfResolverFn<ParentType>
+  }
+
+  export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
+    name: 'DateTime'
   }
 
   export type QueryResolvers<
@@ -124,10 +165,13 @@ export namespace GraphQL { /* eslint-disable-line */
     ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
   > = {
     books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>
+    authors?: Resolver<Array<ResolversTypes['Author']>, ParentType, ContextType>
   }
 
   export type Resolvers<ContextType = AppContext> = {
+    Author?: AuthorResolvers<ContextType>
     Book?: BookResolvers<ContextType>
+    DateTime?: GraphQLScalarType
     Query?: QueryResolvers<ContextType>
   }
 
