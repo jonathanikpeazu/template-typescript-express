@@ -1,23 +1,19 @@
+import { GraphQLDateTime } from 'graphql-iso-date'
 import { GraphQL } from '../graphql'
-
-type Book = { title: string; author: string }
-const books: Book[] = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-]
+import { Book } from '../../models'
 
 const queryResolvers: GraphQL.QueryResolvers = {
-  books: (): Book[] => books,
+  books: async () => {
+    const results = await Book.query()
+    return results
+  },
 }
 
-export const resolvers: GraphQL.Resolvers[] = [
+export const resolvers = [
   {
     Query: queryResolvers,
+  },
+  {
+    ISODateTime: GraphQLDateTime,
   },
 ]

@@ -6107,6 +6107,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"graphql-iso-date@npm:^3.6.1":
+  version: 3.6.1
+  resolution: "graphql-iso-date@npm:3.6.1"
+  peerDependencies:
+    graphql: ^0.5.0 || ^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0
+  checksum: 2/d33245ccaba87665589bf2907159de9e024bfd516ccc905631b68010ff69afbcbd09103d38481569862e4c168f6db0f9df614968295ca41c996c7d7fd2679817
+  languageName: node
+  linkType: hard
+
 "graphql-request@npm:^1.5.0":
   version: 1.8.2
   resolution: "graphql-request@npm:1.8.2"
@@ -11126,6 +11135,7 @@ __metadata:
     eslint-plugin-react-hooks: ^1.7.0
     express: ^4.17.1
     graphql: ^14.6.0
+    graphql-iso-date: ^3.6.1
     graphql-tools: ^4.0.7
     husky: ^4.2.3
     jest: ^25.1.0
